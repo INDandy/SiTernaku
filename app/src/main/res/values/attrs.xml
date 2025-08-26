@@ -1,0 +1,4 @@
+<resources>
+    <attr name="textPrimary" format="color" />
+    <attr name="textSecondary" format="color" />
+</resources>

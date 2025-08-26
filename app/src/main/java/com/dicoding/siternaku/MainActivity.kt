@@ -13,8 +13,6 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private var selectedImageUri: Uri? = null
-
-    // 🔹 ActivityResultLauncher untuk pilih gambar
     private val pickImageLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
@@ -47,7 +45,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // 🔹 Fungsi untuk buka gallery
     fun openGallery() {
         val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
             type = "image/*"

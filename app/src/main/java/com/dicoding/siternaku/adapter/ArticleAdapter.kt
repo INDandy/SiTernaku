@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.dicoding.siternaku.databinding.ItemArticleBinding
 import com.dicoding.siternaku.entity.Article
 
@@ -19,8 +20,11 @@ class ArticleAdapter(
         fun bind(article: Article) {
 
             binding.tvTitle.text = article.title
-            binding.tvContentPreview.text = (article.description ?: "").take(50) + "..."
+//            binding.tvContentPreview.text = (article.description ?: "").take(50) + "..."
 
+            Glide.with(binding.root.context)
+                .load(article.thumbnailUri)
+                .into(binding.ivThumbnail)
 
             binding.root.setOnClickListener { onItemClick(article) }
 
@@ -30,6 +34,7 @@ class ArticleAdapter(
             }
         }
     }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleViewHolder {
         val binding = ItemArticleBinding.inflate(LayoutInflater.from(parent.context), parent, false)

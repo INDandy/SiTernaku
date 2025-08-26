@@ -6,6 +6,7 @@
     <string name="TextView2">Kalkulator Ternak Berfungsi untuk mengkalkulasikan ternak sesuai dari jumlah Ayam dan Kambing</string>
     <string name="kalkulator_ternak">🐓 Kalkulator Ternak 🐐</string>
     <string name="text2">Hitung pakan ternak kamu dengan mudah!</string>
+    <string name="hitung">Hitung</string>
     <string-array name="jenis_hewan">
         <item>Ayam</item>
         <item>Kambing</item>

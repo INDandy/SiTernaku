@@ -5,6 +5,7 @@ import android.net.Uri
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.dicoding.siternaku.databinding.ActivityDetailArticleBinding
 import com.dicoding.siternaku.ui.home.HomeViewModel
@@ -24,28 +25,23 @@ class DetailArticleActivity : AppCompatActivity() {
             article?.let {
                 binding.tvTitle.text = it.title
                 binding.tvHeading.text = it.heading
-                binding.tvSubHeading.text = it.subHeading
-                binding.tvH1.text = it.heading
-                binding.tvH2.text = it.subHeading
                 binding.tvH3.text = it.h3
-                binding.tvH4.text = it.h4
-                binding.tvH5.text = it.h5
-                binding.tvH6.text = it.h6
-                binding.tvDescription.text = it.description
                 binding.tvLink.text = it.link
                 binding.tvLink.setOnClickListener { _ ->
                     val intent = Intent(Intent.ACTION_VIEW, Uri.parse(it.link))
                     startActivity(intent)
                 }
-                binding.tvContent.text = it.content
 
-                // thumbnail image pakai Glide/Picasso
+                binding.ivThumbnail.background = ContextCompat.getDrawable(this, R.drawable.image_border)
+                binding.ivThumbnail.clipToOutline = true
+
                 Glide.with(this)
                     .load(Uri.parse(it.thumbnailUri))
                     .placeholder(R.drawable.image_placeholder)
+                    .centerCrop()
                     .into(binding.ivThumbnail)
             }
-        }
+            }
     }
 }
 

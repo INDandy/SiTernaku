@@ -10,6 +10,14 @@
         android:id="@+id/nav_view"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:background="#A0C878"
+        android:backgroundTint="#A0C878"
+        app:indicatorGravity="top"
+        app:indicatorInterpolator="anticipateOvershoot"
+        app:indicatorColor="@color/black"
+        app:textColor="@color/black"
+        app:textColorActive="@color/black"
+        app:badgeColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_nav_menu" />
 
@@ -19,22 +27,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:defaultNavHost="true"
+
         app:layout_constraintBottom_toTopOf="@id/nav_view"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/mobile_navigation" />
-
-    <!-- FAB -->
-<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--        android:id="@+id/fabAdd"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_margin="16dp"-->
-<!--        app:srcCompat="@android:drawable/ic_input_add"-->
-<!--        app:backgroundTint="@color/purple_500"-->
-<!--        app:tint="@android:color/white"-->
-<!--        app:layout_constraintBottom_toTopOf="@id/nav_view"-->
-<!--        app:layout_constraintEnd_toEndOf="parent" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

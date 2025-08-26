@@ -33,10 +33,9 @@ class HewanAdapter(
     override fun onBindViewHolder(holder: HewanViewHolder, position: Int) {
         val item = data[position]
 
-        // Spinner pilihan ayam/kambing
         ArrayAdapter.createFromResource(
             holder.view.context,
-            R.array.jenis_hewan, // ["Ayam","Kambing"]
+            R.array.jenis_hewan,
             android.R.layout.simple_spinner_item
         ).also { adapter ->
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)

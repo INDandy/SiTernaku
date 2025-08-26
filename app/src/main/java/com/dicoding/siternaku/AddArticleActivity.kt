@@ -62,14 +62,8 @@ class AddArticleActivity : AppCompatActivity() {
             thumbnailUri = selectedImageUri?.toString(),
             title = binding.etTitle.text.toString(),
             heading = binding.etHeading.text.toString(),
-            subHeading = binding.etSubHeading.text.toString(),
             h3 = binding.etH3.text.toString(),
-            h4 = binding.etH4.text.toString(),
-            h5 = binding.etH5.text.toString(),
-            h6 = binding.etH6.text.toString(),
-            description = binding.etDescription.text.toString(),
-            link = binding.etLink.text.toString(),
-            content = binding.etDescription.text.toString()
+            link = binding.etLink.text.toString()
         )
 
         viewModel.insert(article)
