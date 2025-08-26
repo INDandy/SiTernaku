@@ -23,6 +23,7 @@ androidxRoomRuntime = "2.5.1"
 roomKtx = "2.5.2"
 roomRuntime = "2.6.1"
 roomRuntimeVersion = "2.5.0"
+preference = "1.2.1"
 
 
 [libraries]
@@ -49,6 +50,7 @@ androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomKtx"
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
 androidx-room-runtime-v250 = { module = "androidx.room:room-runtime", version.ref = "roomRuntimeVersion" }
 androidx-room-runtime-v251 = { module = "androidx.room:room-runtime", version.ref = "androidxRoomRuntime" }
+androidx-preference = { group = "androidx.preference", name = "preference", version.ref = "preference" }
 
 
 [plugins]

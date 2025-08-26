@@ -57,6 +57,20 @@
             app:layout_constraintTop_toBottomOf="@+id/btnTambah"
             app:layout_constraintVertical_bias="1.0" />
 
+        <TextView
+            android:id="@+id/tvMerkPakan"
+            style="@style/TextColorNG"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/nimbussanlbol"
+            android:text=""
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/tvHasil"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
         <Button
             android:id="@+id/btnTambah"
             android:layout_width="47dp"

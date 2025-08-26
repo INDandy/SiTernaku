@@ -41,15 +41,32 @@ class HomeFragment : Fragment() {
             }
         )
 
-
         binding.recyclerViewArticles.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = articleAdapter
         }
 
-        homeViewModel.allArticles.observe(viewLifecycleOwner) {
-            articleAdapter.submitList(it)
+        homeViewModel.allArticles.observe(viewLifecycleOwner) { articles ->
+            if (articles.isEmpty()) {
+                binding.tvEmpty.visibility = View.VISIBLE
+                binding.recyclerViewArticles.visibility = View.GONE
+            } else {
+                binding.tvEmpty.visibility = View.GONE
+                binding.recyclerViewArticles.visibility = View.VISIBLE
+                articleAdapter.submitList(articles)
+            }
         }
+
+        homeViewModel.allArticles.observe(viewLifecycleOwner) { articles ->
+            binding.recyclerViewArticles.visibility = if (articles.isNotEmpty()) View.VISIBLE else View.GONE
+            binding.tvEmpty.visibility = if (articles.isEmpty()) View.VISIBLE else View.GONE
+
+            homeViewModel.setLoading(false)
+
+            articleAdapter.submitList(articles)
+        }
+
+
 
         binding.fabAdd.setOnClickListener {
             startActivity(Intent(requireContext(), AddArticleActivity::class.java))
@@ -57,4 +74,11 @@ class HomeFragment : Fragment() {
 
         return binding.root
     }
+
+    override fun onResume() {
+        super.onResume()
+        homeViewModel.setLoading(true)
+    }
+
 }
+

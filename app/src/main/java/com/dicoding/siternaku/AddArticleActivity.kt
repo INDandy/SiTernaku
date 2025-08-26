@@ -10,6 +10,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.dicoding.siternaku.databinding.ActivityAddArticleBinding
 import com.dicoding.siternaku.entity.Article
 import com.dicoding.siternaku.ui.home.HomeViewModel
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class AddArticleActivity : AppCompatActivity() {
 
@@ -24,12 +27,10 @@ class AddArticleActivity : AppCompatActivity() {
             val uri = result.data?.data
             if (uri != null) {
                 selectedImageUri = uri
-
                 contentResolver.takePersistableUriPermission(
                     uri,
                     Intent.FLAG_GRANT_READ_URI_PERMISSION
                 )
-
                 binding.ivThumbnail.setImageURI(selectedImageUri)
             }
         }
@@ -58,12 +59,20 @@ class AddArticleActivity : AppCompatActivity() {
     }
 
     private fun saveArticle() {
+        if (selectedImageUri == null) {
+            Toast.makeText(this, "Wajib Masukkan Gambar!", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        val currentDate = SimpleDateFormat("dd MMMM yyyy", Locale("id")).format(Date())
+
         val article = Article(
-            thumbnailUri = selectedImageUri?.toString(),
+            thumbnailUri = selectedImageUri.toString(),
             title = binding.etTitle.text.toString(),
             heading = binding.etHeading.text.toString(),
             h3 = binding.etH3.text.toString(),
-            link = binding.etLink.text.toString()
+            link = binding.etLink.text.toString(),
+            date = currentDate // otomatis isi tanggal
         )
 
         viewModel.insert(article)
@@ -71,4 +80,5 @@ class AddArticleActivity : AppCompatActivity() {
         finish()
     }
 }
+
 

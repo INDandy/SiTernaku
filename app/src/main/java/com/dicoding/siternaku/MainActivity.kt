@@ -45,6 +45,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
+
     fun openGallery() {
         val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
             type = "image/*"

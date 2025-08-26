@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.dicoding.siternaku.dao.ArticleDao
 import com.dicoding.siternaku.entity.Article
 
-@Database(entities = [Article::class], version = 4, exportSchema = false)
+@Database(entities = [Article::class], version = 5, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun articleDao(): ArticleDao
 

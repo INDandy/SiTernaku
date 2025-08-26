@@ -46,7 +46,6 @@ class HewanAdapter(
         holder.etJumlah.setText(item.jumlah.toString())
         holder.etUsia.setText(item.usia.toString())
 
-        // Update data tiap kali user edit
         holder.spinnerJenis.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, v: View?, pos: Int, id: Long) {
                 val currentPos = holder.adapterPosition

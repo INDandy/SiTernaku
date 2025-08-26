@@ -1,6 +1,8 @@
 package com.dicoding.siternaku.ui.calculator
 
 import android.os.Bundle
+import android.text.Html
+import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,7 +15,6 @@ import android.widget.TextView
 import androidx.core.view.children
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import com.dicoding.siternaku.R
 import com.dicoding.siternaku.data.HewanInput
 
@@ -58,9 +59,11 @@ class CalculatorFragment : Fragment() {
             viewModel.hitungKebutuhan()
         }
 
-        viewModel.hasil.observe(viewLifecycleOwner, Observer {
-            tvHasil.text = it
-        })
+        viewModel.hasil.observe(viewLifecycleOwner) { hasil ->
+            tvHasil.text = Html.fromHtml(hasil, Html.FROM_HTML_MODE_LEGACY)
+            tvHasil.movementMethod = LinkMovementMethod.getInstance()
+        }
+
 
         tambahFormHewan(inflater)
         tambahFormHewan(inflater)
@@ -79,4 +82,5 @@ class CalculatorFragment : Fragment() {
 
         containerInput.addView(itemView)
     }
+
 }

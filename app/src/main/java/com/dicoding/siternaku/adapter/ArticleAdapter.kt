@@ -15,19 +15,18 @@ class ArticleAdapter(
     private val onItemLongClick: (Article) -> Unit
 ) : ListAdapter<Article, ArticleAdapter.ArticleViewHolder>(DIFF_CALLBACK) {
 
-    inner class ArticleViewHolder(val binding: ItemArticleBinding) :
+    inner class ArticleViewHolder(private val binding: ItemArticleBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(article: Article) {
-
             binding.tvTitle.text = article.title
-//            binding.tvContentPreview.text = (article.description ?: "").take(50) + "..."
+
+            binding.tvDate.text = article.date ?: "Tanggal tidak tersedia"
 
             Glide.with(binding.root.context)
                 .load(article.thumbnailUri)
                 .into(binding.ivThumbnail)
 
             binding.root.setOnClickListener { onItemClick(article) }
-
             binding.root.setOnLongClickListener {
                 onItemLongClick(article)
                 true
@@ -35,9 +34,12 @@ class ArticleAdapter(
         }
     }
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleViewHolder {
-        val binding = ItemArticleBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = ItemArticleBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
+        )
         return ArticleViewHolder(binding)
     }
 
@@ -47,13 +49,14 @@ class ArticleAdapter(
 
     companion object {
         val DIFF_CALLBACK = object : DiffUtil.ItemCallback<Article>() {
-            override fun areItemsTheSame(oldItem: Article, newItem: Article): Boolean =
+            override fun areItemsTheSame(oldItem: Article, newItem: Article) =
                 oldItem.id == newItem.id
 
-            override fun areContentsTheSame(oldItem: Article, newItem: Article): Boolean =
+            override fun areContentsTheSame(oldItem: Article, newItem: Article) =
                 oldItem == newItem
         }
     }
 }
+
 
 

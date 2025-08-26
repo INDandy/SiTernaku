@@ -10,29 +10,34 @@
 
     <ImageView
         android:id="@+id/ivThumbnail"
-        android:layout_width="367dp"
-        android:layout_height="350dp"
-        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="257dp"
         android:adjustViewBounds="true"
         android:contentDescription="Thumbnail"
         android:scaleType="fitCenter"
-        android:src="@drawable/image_placeholder" />
+        android:src="@drawable/photos" />
+
+    <!-- Tanggal -->
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="20 Agustus 2025"
+        android:textSize="14sp"
+        android:textColor="@android:color/darker_gray"
+        android:fontFamily="@font/nimbussanlbol" />
 
     <TextView
         android:id="@+id/tvTitle"
         style="@style/TextColorNG"
-        android:layout_width="239dp"
-        android:layout_height="134dp"
-        android:fontFamily="sans-serif-light"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nimbussanlbol"
         android:textSize="36sp"
-        android:textStyle="bold" />
-
-<!--    <TextView-->
-<!--        android:id="@+id/tvContentPreview"-->
-<!--        android:fontFamily="sans-serif-light"-->
-<!--        android:textSize="18sp"-->
-<!--        android:textColor="@color/white"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content" />-->
+        android:textStyle="bold"
+        android:layout_marginTop="4dp"
+        android:text="Judul Artikel" />
 </LinearLayout>
+
 

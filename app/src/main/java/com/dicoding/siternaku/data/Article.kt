@@ -13,7 +13,7 @@ data class Article(
     val title: String,
 
     @ColumnInfo(name = "content")
-    val content: String,   // bikin non-nullable biar sesuai Found
+    val content: String,
 
     @ColumnInfo(name = "thumbnailUri")
     val thumbnailUri: String? = null,
@@ -37,8 +37,12 @@ data class Article(
     val h6: String? = null,
 
     @ColumnInfo(name = "description")
-    val description: String? = null, // nullable biar sesuai Found
+    val description: String? = null,
 
     @ColumnInfo(name = "link")
-    val link: String? = null
+    val link: String? = null,
+
+    @ColumnInfo(name = "date")
+    val date: String? = null
 )
+

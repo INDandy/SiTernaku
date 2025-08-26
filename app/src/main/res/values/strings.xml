@@ -7,6 +7,8 @@
     <string name="kalkulator_ternak">🐓 Kalkulator Ternak 🐐</string>
     <string name="text2">Hitung pakan ternak kamu dengan mudah!</string>
     <string name="hitung">Hitung</string>
+    <string name="about"><![CDATA[Aplikasi ini Menyajikan Artikel Trivia mengenai Hewan Ternak yang di prioritaskan disini adalah Ayam dan Kambing & juga di aplikasi ini kami menyediakan Fitur Kalkulator untuk menghitung takaran makan ternak yang cocok tergantung dari jumlah dan usia hewan ternak yang bapak/ibu miliki.]]></string>
+    <string name="nodata">Belum ada trivia nih :( Silahkan ditambah dulu ya</string>
     <string-array name="jenis_hewan">
         <item>Ayam</item>
         <item>Kambing</item>
