@@ -12,14 +12,14 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.dicoding.siternaku.ui.dashboard.DashboardFragment"
+        android:id="@+id/navigation_calculator"
+        android:name="com.dicoding.siternaku.ui.calculator.CalculatorFragment"
         android:label="@string/title_calculator"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_calculator" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.dicoding.siternaku.ui.notifications.NotificationsFragment"
+        android:id="@+id/navigation_settings"
+        android:name="com.dicoding.siternaku.ui.settings.SettingsFragment"
         android:label="@string/title_setting"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_settings" />
 </navigation>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="?android:attr/dividerVertical"
+        android:showDividers="middle"
+        android:dividerPadding="8dp">
+
+        <!-- Thumbnail -->
+        <ImageView
+            android:id="@+id/ivThumbnail"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:src="@drawable/image_placeholder"
+            android:scaleType="centerCrop"
+            android:contentDescription="Thumbnail" />
+
+        <Button
+            android:id="@+id/btnPickImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Pilih Gambar" />
+
+        <!-- Title -->
+        <EditText
+            android:id="@+id/etTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Title"
+            android:inputType="textCapSentences" />
+
+        <!-- Heading (H1) -->
+        <EditText
+            android:id="@+id/etHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Heading (H1)" />
+
+        <!-- Sub Heading (H2) -->
+        <EditText
+            android:id="@+id/etSubHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Sub Heading (H2)" />
+
+        <!-- H3 -->
+        <EditText
+            android:id="@+id/etH3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Heading 3 (H3)" />
+
+        <!-- H4 -->
+        <EditText
+            android:id="@+id/etH4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Heading 4 (H4)" />
+
+        <!-- H5 -->
+        <EditText
+            android:id="@+id/etH5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Heading 5 (H5)" />
+
+        <!-- H6 -->
+        <EditText
+            android:id="@+id/etH6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Heading 6 (H6)" />
+
+        <!-- Description -->
+        <EditText
+            android:id="@+id/etDescription"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:gravity="top"
+            android:hint="Deskripsi Artikel"
+            android:inputType="textMultiLine" />
+
+        <!-- Link -->
+        <EditText
+            android:id="@+id/etLink"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Link Artikel (opsional)"
+            android:inputType="textUri" />
+
+        <!-- Save Button -->
+        <Button
+            android:id="@+id/btnSaveArticle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Simpan Artikel"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+</ScrollView>

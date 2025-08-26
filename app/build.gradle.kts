@@ -1,6 +1,10 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("kotlin-android")
+    id("com.google.devtools.ksp")
+    id("kotlin-parcelize")
+    id ("kotlin-kapt")
 }
 
 android {
@@ -39,7 +43,18 @@ android {
 }
 
 dependencies {
+    //glide
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    kapt ("com.github.bumptech.glide:compiler:4.16.0")
 
+
+    // Room (pakai versi 2.5.2 biar cocok sama Kotlin 1.9.0)
+    implementation("androidx.room:room-runtime:2.5.2")
+    implementation("androidx.room:room-ktx:2.5.2")
+    ksp("androidx.room:room-compiler:2.5.2")
+
+
+    // Library lain
     implementation(libs.nicebottombar)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -49,6 +64,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

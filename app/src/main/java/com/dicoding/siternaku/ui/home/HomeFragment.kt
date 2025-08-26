@@ -1,42 +1,60 @@
 package com.dicoding.siternaku.ui.home
 
+import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.dicoding.siternaku.AddArticleActivity
+import com.dicoding.siternaku.DetailArticleActivity
+import com.dicoding.siternaku.adapter.ArticleAdapter
 import com.dicoding.siternaku.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+    private lateinit var binding: FragmentHomeBinding
+    private val homeViewModel: HomeViewModel by viewModels()
+    private lateinit var articleAdapter: ArticleAdapter
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+        articleAdapter = ArticleAdapter(
+            onItemClick = { article ->
+                val intent = Intent(requireContext(), DetailArticleActivity::class.java)
+                intent.putExtra("ARTICLE_ID", article.id)
+                startActivity(intent)
+            },
+            onItemLongClick = { article ->
+                AlertDialog.Builder(requireContext())
+                    .setTitle("Hapus Artikel")
+                    .setMessage("Yakin mau hapus artikel ini?")
+                    .setPositiveButton("Hapus") { _, _ ->
+                        homeViewModel.delete(article)
+                    }
+                    .setNegativeButton("Batal", null)
+                    .show()
+            }
+        )
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        binding.recyclerViewArticles.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            adapter = articleAdapter
         }
-        return root
-    }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+        homeViewModel.allArticles.observe(viewLifecycleOwner) {
+            articleAdapter.submitList(it)
+        }
+
+        binding.fabAdd.setOnClickListener {
+            startActivity(Intent(requireContext(), AddArticleActivity::class.java))
+        }
+
+        return binding.root
     }
 }

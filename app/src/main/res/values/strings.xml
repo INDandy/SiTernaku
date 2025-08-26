@@ -3,4 +3,11 @@
     <string name="title_home">Home</string>
     <string name="title_calculator">Calculator</string>
     <string name="title_setting">Settings</string>
+    <string name="TextView2">Kalkulator Ternak Berfungsi untuk mengkalkulasikan ternak sesuai dari jumlah Ayam dan Kambing</string>
+    <string name="kalkulator_ternak">🐓 Kalkulator Ternak 🐐</string>
+    <string name="text2">Hitung pakan ternak kamu dengan mudah!</string>
+    <string-array name="jenis_hewan">
+        <item>Ayam</item>
+        <item>Kambing</item>
+    </string-array>
 </resources>

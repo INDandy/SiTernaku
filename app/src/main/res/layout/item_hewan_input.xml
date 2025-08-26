@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <Spinner
+        android:id="@+id/spJenis"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:entries="@array/jenis_hewan" />
+
+    <EditText
+        android:id="@+id/etJumlah"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="Jumlah"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/etUsia"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="Usia"
+        android:inputType="number" />
+
+    <ImageButton
+        android:id="@+id/btnHapus"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@android:color/transparent"
+        android:src="@android:drawable/ic_menu_delete"
+        android:contentDescription="Hapus" />
+
+</LinearLayout>
