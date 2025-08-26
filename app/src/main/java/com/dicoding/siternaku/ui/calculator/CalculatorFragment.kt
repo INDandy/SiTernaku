@@ -62,8 +62,12 @@ class CalculatorFragment : Fragment() {
             tvHasil.text = it
         })
 
+        tambahFormHewan(inflater)
+        tambahFormHewan(inflater)
+
         return root
     }
+
 
     private fun tambahFormHewan(inflater: LayoutInflater) {
         val itemView = inflater.inflate(R.layout.item_hewan_input, containerInput, false)

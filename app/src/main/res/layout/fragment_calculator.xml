@@ -27,11 +27,12 @@
 
         <Button
             android:id="@+id/btnHitung"
-            android:layout_width="47dp"
+            android:layout_width="100dp"
             android:layout_height="53dp"
             android:layout_marginTop="52dp"
             android:layout_marginBottom="24dp"
             android:text="@string/hitung"
+            style="@style/TextColorBT"
             app:layout_constraintBottom_toTopOf="@+id/tvHasil"
             app:layout_constraintEnd_toStartOf="@+id/btnTambah"
             app:layout_constraintHorizontal_bias="0.888"
@@ -45,6 +46,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
             android:fontFamily="@font/nimbussanlbol"
             android:text="Hasil muncul di sini"
             android:textStyle="bold"
@@ -57,10 +59,10 @@
 
         <Button
             android:id="@+id/btnTambah"
-            style="@style/TextColorNG"
             android:layout_width="47dp"
             android:layout_height="53dp"
             android:layout_marginTop="56dp"
+            style="@style/TextColorBT"
             android:text="+"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
