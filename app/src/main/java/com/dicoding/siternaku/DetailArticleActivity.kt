@@ -20,8 +20,7 @@ class DetailArticleActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val articleId = intent.getIntExtra("ARTICLE_ID", -1)
-        homeViewModel.allArticles.observe(this) { articles ->
-            val article = articles.find { it.id == articleId }
+        homeViewModel.getArticleById(articleId).observe(this) { article ->
             article?.let {
                 binding.tvTitle.text = it.title
                 binding.tvHeading.text = it.heading
@@ -32,7 +31,8 @@ class DetailArticleActivity : AppCompatActivity() {
                     startActivity(intent)
                 }
 
-                binding.ivThumbnail.background = ContextCompat.getDrawable(this, R.drawable.image_border)
+                binding.ivThumbnail.background =
+                    ContextCompat.getDrawable(this, R.drawable.image_border)
                 binding.ivThumbnail.clipToOutline = true
 
                 Glide.with(this)
@@ -41,7 +41,6 @@ class DetailArticleActivity : AppCompatActivity() {
                     .centerCrop()
                     .into(binding.ivThumbnail)
             }
-            }
+        }
     }
 }
-

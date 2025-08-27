@@ -43,6 +43,10 @@ android {
 }
 
 dependencies {
+    //paging
+    implementation ("androidx.paging:paging-runtime-ktx:3.2.0")
+    implementation ("androidx.room:room-paging:2.6.0")
+
     //glide
     implementation ("com.github.bumptech.glide:glide:4.16.0")
     implementation(libs.androidx.preference)

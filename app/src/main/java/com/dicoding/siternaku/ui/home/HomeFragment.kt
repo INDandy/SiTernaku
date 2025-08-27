@@ -8,11 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.siternaku.AddArticleActivity
 import com.dicoding.siternaku.DetailArticleActivity
 import com.dicoding.siternaku.adapter.ArticleAdapter
 import com.dicoding.siternaku.databinding.FragmentHomeBinding
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
 
@@ -33,9 +36,7 @@ class HomeFragment : Fragment() {
                 AlertDialog.Builder(requireContext())
                     .setTitle("Hapus Artikel")
                     .setMessage("Yakin mau hapus artikel ini?")
-                    .setPositiveButton("Hapus") { _, _ ->
-                        homeViewModel.delete(article)
-                    }
+                    .setPositiveButton("Hapus") { _, _ -> homeViewModel.delete(article) }
                     .setNegativeButton("Batal", null)
                     .show()
             }
@@ -46,27 +47,11 @@ class HomeFragment : Fragment() {
             adapter = articleAdapter
         }
 
-        homeViewModel.allArticles.observe(viewLifecycleOwner) { articles ->
-            if (articles.isEmpty()) {
-                binding.tvEmpty.visibility = View.VISIBLE
-                binding.recyclerViewArticles.visibility = View.GONE
-            } else {
-                binding.tvEmpty.visibility = View.GONE
-                binding.recyclerViewArticles.visibility = View.VISIBLE
-                articleAdapter.submitList(articles)
+        lifecycleScope.launch {
+            homeViewModel.allArticlesPaging.collectLatest { pagingData ->
+                articleAdapter.submitData(pagingData)
             }
         }
-
-        homeViewModel.allArticles.observe(viewLifecycleOwner) { articles ->
-            binding.recyclerViewArticles.visibility = if (articles.isNotEmpty()) View.VISIBLE else View.GONE
-            binding.tvEmpty.visibility = if (articles.isEmpty()) View.VISIBLE else View.GONE
-
-            homeViewModel.setLoading(false)
-
-            articleAdapter.submitList(articles)
-        }
-
-
 
         binding.fabAdd.setOnClickListener {
             startActivity(Intent(requireContext(), AddArticleActivity::class.java))
@@ -74,11 +59,5 @@ class HomeFragment : Fragment() {
 
         return binding.root
     }
-
-    override fun onResume() {
-        super.onResume()
-        homeViewModel.setLoading(true)
-    }
-
 }
 

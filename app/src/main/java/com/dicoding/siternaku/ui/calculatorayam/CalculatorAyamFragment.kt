@@ -120,7 +120,6 @@ class CalculatorAyamFragment : Fragment() {
         }
 
         btnSimpanRingkasan.setOnClickListener {
-            // Cek dulu apakah ada data yang akan disimpan
             if (viewModel.rekapList.value.isNullOrEmpty()) {
                 AlertDialog.Builder(requireContext())
                     .setTitle("Perhatian")
