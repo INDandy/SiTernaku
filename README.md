@@ -35,7 +35,7 @@ Dibangun menggunakan **Kotlin**, **Room**, dan **Material Design**.
 
 ## Screenshots
 
-| Home | Detail Artikel | Kalkulator | Settings | Grafik |
+| Logo | Home | Detail Artilkel | Kalkulator | Output |
 |------|----------------|------------|---------|--------|
 | <img width="200" height="350" src="https://github.com/user-attachments/assets/30568be0-0726-4e40-91fc-d76d5b5b5327" /> | <img width="200" height="350" src="https://github.com/user-attachments/assets/4ce214c8-df26-431e-9278-28d7a6c23a5d" /> | <img width="200" height="350" src="https://github.com/user-attachments/assets/fc56880b-54c8-4561-b951-33fc571c3e69" /> | <img width="200" height="350" src="https://github.com/user-attachments/assets/425da9b6-ba2d-4518-b29d-e17a062fea6d" /> | <img width="200" height="150" src="https://github.com/user-attachments/assets/851ad57f-a313-4a44-ad10-612b991ec225" /> |
 
