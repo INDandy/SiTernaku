@@ -2,12 +2,12 @@
     <!-- Base application theme. -->
     <style name="Theme.SiTernaku" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#DDEB9D</item>
-        <item name="colorPrimaryVariant">#DDEB9D</item>
-        <item name="colorOnPrimary">#DDEB9D</item>
+        <item name="colorPrimary">#4C956C</item>
+        <item name="colorPrimaryVariant">#4C956C</item>
+        <item name="colorOnPrimary">#4C956C</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">#DDEB9D</item>
-        <item name="colorSecondaryVariant">#DDEB9D</item>
+        <item name="colorSecondary">#FFFFFF</item>
+        <item name="colorSecondaryVariant">#FFFFFF</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:divider="?android:attr/dividerHorizontal"
+        android:showDividers="middle"
+        android:dividerPadding="8dp">
+
+        <!-- Judul -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kalkulator Ayam (Menghitung Pendapatan)"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingBottom="12dp" />
+
+        <!-- ==================== Pakan Harian & Biaya ==================== -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pakan Harian &amp; Biaya"
+            android:textStyle="bold"
+            android:paddingTop="12dp" />
+
+        <EditText
+            android:id="@+id/etJumlahAyam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Jumlah Ayam"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/etPakanPerEkor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Rata-rata pakan per ekor (kg)"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/etHargaPakan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Harga Pakan per Kg"
+            android:inputType="numberDecimal" />
+
+        <Button
+            android:id="@+id/btnHitungPakan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextColorBT"
+            android:text="Hitung Pakan &amp; Biaya" />
+
+        <TextView
+            android:id="@+id/tvHasilPakan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hasil kebutuhan pakan &amp; biaya akan tampil di sini" />
+
+        <!-- ==================== Produksi Telur ==================== -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Produksi Telur (ayam petelur)"
+            android:textStyle="bold"
+            android:paddingTop="12dp" />
+
+        <EditText
+            android:id="@+id/etJumlahAyamBetina"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Jumlah Ayam Betina"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/etPersenProduksiTelur"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="% Produksi Harian"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/etHargaTelur"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Harga Telur per Butir"
+            android:inputType="numberDecimal" />
+
+        <Button
+            android:id="@+id/btnHitungTelur"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextColorBT"
+            android:text="Hitung Produksi Telur" />
+
+        <TextView
+            android:id="@+id/tvHasilTelur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hasil produksi telur &amp; pendapatan akan tampil di sini" />
+
+        <!-- ==================== Bobot Panen ==================== -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bobot Panen (ayam pedaging)"
+            android:textStyle="bold"
+            style="@style/TextColorBT"
+            android:paddingTop="12dp" />
+
+        <EditText
+            android:id="@+id/etBobotPanen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Rata-rata Bobot Panen (kg)"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/etHargaJualKg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Harga Jual per Kg"
+            android:inputType="numberDecimal" />
+
+        <Button
+            android:id="@+id/btnHitungPanen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextColorBT"
+            android:text="Hitung Bobot &amp; Pendapatan Panen" />
+
+        <TextView
+            android:id="@+id/tvHasilPanen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hasil bobot &amp; pendapatan panen akan tampil di sini" />
+
+        <!-- ==================== Mortalitas ==================== -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tingkat Mortalitas"
+            android:textStyle="bold"
+            android:paddingTop="12dp" />
+
+        <EditText
+            android:id="@+id/etMortalitas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Persentase Mortalitas (%)"
+            android:inputType="numberDecimal" />
+
+        <Button
+            android:id="@+id/btnHitungMortalitas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextColorBT"
+            android:text="Hitung Estimasi Ayam Hidup" />
+
+        <TextView
+            android:id="@+id/tvHasilMortalitas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estimasi ayam hidup &amp; dampak pendapatan akan tampil di sini" />
+
+
+        <!-- Hasil Rekap -->
+        <TextView
+            android:id="@+id/tvRekap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rekap Laporan"
+            android:textStyle="bold"
+            android:paddingTop="16dp"
+            android:textSize="16sp"/>
+
+        <!-- RecyclerView untuk laporan -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvLaporan"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:overScrollMode="never"/>
+
+        <Button
+            android:id="@+id/btnSimpanRingkasan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Simpan Ringkasan Laporan"
+            style="@style/TextColorBT"
+            android:layout_margin="16dp"
+            app:layout_constraintTop_toBottomOf="@id/rvLaporan"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    </LinearLayout>
+</ScrollView>

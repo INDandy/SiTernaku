@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_calculator_nested"
+    app:startDestination="@id/calculatorAyamFragment">
+
+    <fragment
+        android:id="@+id/calculatorAyamFragment"
+        android:name="com.dicoding.siternaku.ui.calculatorayam.CalculatorAyam"
+        android:label="Calculator Ayam"
+        tools:layout="@layout/fragment_calculator_ayam" />
+
+    <fragment
+        android:id="@+id/calculatorKambingFragment"
+       android:name="com.dicoding.siternaku.ui.calculatorkambing.CalculatorKambing"
+        android:label="Calculator Kambing"
+        tools:layout="@layout/fragment_calculator_kambing" />
+</navigation>
+

@@ -24,6 +24,8 @@ roomKtx = "2.5.2"
 roomRuntime = "2.6.1"
 roomRuntimeVersion = "2.5.0"
 preference = "1.2.1"
+legacySupportV4 = "1.0.0"
+fragmentKtx = "1.8.5"
 
 
 [libraries]
@@ -51,6 +53,8 @@ androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "
 androidx-room-runtime-v250 = { module = "androidx.room:room-runtime", version.ref = "roomRuntimeVersion" }
 androidx-room-runtime-v251 = { module = "androidx.room:room-runtime", version.ref = "androidxRoomRuntime" }
 androidx-preference = { group = "androidx.preference", name = "preference", version.ref = "preference" }
+androidx-legacy-support-v4 = { group = "androidx.legacy", name = "legacy-support-v4", version.ref = "legacySupportV4" }
+androidx-fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragmentKtx" }
 
 
 [plugins]

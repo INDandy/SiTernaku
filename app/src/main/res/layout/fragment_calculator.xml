@@ -1,87 +1,38 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_calculator"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginBottom="60dp">
+    android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <!-- AppBar utama -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:fitsSystemWindows="true"
+        android:background="?attr/colorSurface"
+        app:elevation="4dp">
 
-        <!-- Container Input -->
-
-        <LinearLayout
-            android:id="@+id/containerInput"
-            android:layout_width="0dp"
+        <!-- Top bar level 2 (pilihan 2 tab) -->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingTop="8dp"
-            android:visibility="visible"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:tabIndicatorFullWidth="false"
+            app:tabMode="fixed"
+            app:tabGravity="fill"
+            app:tabIndicatorAnimationMode="elastic" />
+    </com.google.android.material.appbar.AppBarLayout>
 
-        </LinearLayout>
+    <!-- Konten: ViewPager2 untuk switch antar fragment -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="72dp"
+        android:clipToPadding="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-        <Button
-            android:id="@+id/btnHitung"
-            android:layout_width="100dp"
-            android:layout_height="53dp"
-            android:layout_marginTop="52dp"
-            android:layout_marginBottom="24dp"
-            android:text="@string/hitung"
-            style="@style/TextColorBT"
-            app:layout_constraintBottom_toTopOf="@+id/tvHasil"
-            app:layout_constraintEnd_toStartOf="@+id/btnTambah"
-            app:layout_constraintHorizontal_bias="0.888"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/containerInput"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <TextView
-            android:id="@+id/tvHasil"
-            style="@style/TextColorNG"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="24dp"
-            android:fontFamily="@font/nimbussanlbol"
-            android:text="Hasil muncul di sini"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnTambah"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <TextView
-            android:id="@+id/tvMerkPakan"
-            style="@style/TextColorNG"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/nimbussanlbol"
-            android:text=""
-            android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@+id/tvHasil"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-
-        <Button
-            android:id="@+id/btnTambah"
-            android:layout_width="47dp"
-            android:layout_height="53dp"
-            android:layout_marginTop="56dp"
-            style="@style/TextColorBT"
-            android:text="+"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/containerInput" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

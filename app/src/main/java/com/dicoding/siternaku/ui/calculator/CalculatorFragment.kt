@@ -1,86 +1,33 @@
 package com.dicoding.siternaku.ui.calculator
 
 import android.os.Bundle
-import android.text.Html
-import android.text.method.LinkMovementMethod
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageButton
-import android.widget.LinearLayout
-import android.widget.Spinner
-import android.widget.TextView
-import androidx.core.view.children
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.viewpager2.adapter.FragmentStateAdapter
+import androidx.viewpager2.widget.ViewPager2
 import com.dicoding.siternaku.R
-import com.dicoding.siternaku.data.HewanInput
+import com.dicoding.siternaku.ui.calculatorayam.CalculatorAyamFragment
+import com.dicoding.siternaku.ui.calculatorkambing.CalculatorKambing
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 
-class CalculatorFragment : Fragment() {
+class CalculatorFragment : Fragment(R.layout.fragment_calculator) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val viewPager = view.findViewById<ViewPager2>(R.id.viewPager)
+        val tabLayout = view.findViewById<TabLayout>(R.id.tabLayout)
 
-    private val viewModel: CalculatorViewModel by viewModels()
-    private lateinit var containerInput: LinearLayout
-    private lateinit var btnTambah: Button
-    private lateinit var btnHitung: Button
-    private lateinit var tvHasil: TextView
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val root = inflater.inflate(R.layout.fragment_calculator, container, false)
-
-        containerInput = root.findViewById(R.id.containerInput)
-        btnTambah = root.findViewById(R.id.btnTambah)
-        btnHitung = root.findViewById(R.id.btnHitung)
-        tvHasil = root.findViewById(R.id.tvHasil)
-
-        btnTambah.setOnClickListener {
-            tambahFormHewan(inflater)
+        viewPager.adapter = object : FragmentStateAdapter(this) {
+            override fun getItemCount() = 2
+            override fun createFragment(position: Int): Fragment =
+                if (position == 0) CalculatorAyamFragment() else CalculatorKambing()
         }
 
-        btnHitung.setOnClickListener {
-            viewModel.resetData()
-            containerInput.children.forEach { view ->
-                val spinner = view.findViewById<Spinner>(R.id.spJenis)
-                val etJumlah = view.findViewById<EditText>(R.id.etJumlah)
-                val etUsia = view.findViewById<EditText>(R.id.etUsia)
-
-                val jenis = spinner.selectedItem.toString()
-                val jumlah = etJumlah.text.toString().toIntOrNull() ?: 0
-                val usia = etUsia.text.toString().toIntOrNull() ?: 0
-
-                if (jumlah > 0) {
-                    viewModel.tambahHewan(HewanInput(jenis, jumlah, usia))
-                }
-            }
-            viewModel.hitungKebutuhan()
-        }
-
-        viewModel.hasil.observe(viewLifecycleOwner) { hasil ->
-            tvHasil.text = Html.fromHtml(hasil, Html.FROM_HTML_MODE_LEGACY)
-            tvHasil.movementMethod = LinkMovementMethod.getInstance()
-        }
-
-
-        tambahFormHewan(inflater)
-        tambahFormHewan(inflater)
-
-        return root
+        TabLayoutMediator(tabLayout, viewPager) { tab, pos ->
+            tab.text = if (pos == 0) "Ayam" else "Kambing"
+        }.attach()
     }
-
-
-    private fun tambahFormHewan(inflater: LayoutInflater) {
-        val itemView = inflater.inflate(R.layout.item_hewan_input, containerInput, false)
-
-        val btnHapus = itemView.findViewById<ImageButton>(R.id.btnHapus)
-        btnHapus.setOnClickListener {
-            containerInput.removeView(itemView)
-        }
-
-        containerInput.addView(itemView)
-    }
-
 }
+
+
+

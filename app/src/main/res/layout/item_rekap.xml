@@ -1,0 +1,66 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/tvKategori"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kategori"
+        android:textStyle="bold"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvTanggal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tanggal"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tvPendapatan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pendapatan"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tvBiaya"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Biaya"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tvKeuntungan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Keuntungan"
+        android:textStyle="bold"
+        android:textSize="15sp" />
+
+    <!-- Detail tambahan perhitungan -->
+    <TextView
+        android:id="@+id/tvDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Detail perhitungan..."
+        android:paddingTop="4dp"
+        android:textSize="13sp"
+        android:textColor="@android:color/darker_gray" />
+
+    <!-- Ringkasan/Highlight -->
+    <TextView
+        android:id="@+id/tvRingkasan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ringkasan laporan"
+        android:textStyle="italic"
+        android:textSize="14sp"
+        android:paddingTop="6dp"
+        android:textColor="@android:color/holo_green_dark" />
+
+
+</LinearLayout>
