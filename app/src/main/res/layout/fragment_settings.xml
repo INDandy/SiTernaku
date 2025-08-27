@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
-    <!-- Logo di atas -->
     <ImageView
         android:id="@+id/ivLogoApp"
         android:layout_width="120dp"
@@ -15,7 +14,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Container untuk item Settings -->
     <LinearLayout
         android:id="@+id/containerSettings"
         android:layout_width="0dp"
@@ -27,7 +25,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginTop="24dp">
 
-        <!-- Contoh item About -->
         <TextView
             android:id="@+id/tvAbout"
             android:layout_width="match_parent"
@@ -44,9 +41,6 @@
             android:padding="12dp"
             android:text="Version 1.0.0"
             android:textSize="16sp"/>
-
-        <!-- Tambah item lain sesuai kebutuhan -->
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -37,8 +37,8 @@
     <string name="hitung_bobot_amp_pendapatan_panen"><![CDATA[Hitung Bobot & Pendapatan Panen]]></string>
     <string name="hasil_bobot_amp_pendapatan_panen_akan_tampil_di_sini"><![CDATA[Hasil bobot & pendapatan panen akan tampil di sini]]></string>
     <string name="tingkat_mortalitas">Tingkat Mortalitas</string>
-    <string name="persentase_mortalitas">Persentase Mortalitas (%)</string>
-    <string name="hitung_estimasi_ayam_hidup">Hitung Estimasi Ayam Hidup</string>
+    <string name="persentase_mortalitas">Persentase ayam mati untuk memantau kesehatan dan kerugian peternakan.</string>
+    <string name="hitung_estimasi_ayam_hidup">Hitung Kerugian Ayam yang Mati</string>
     <string name="estimasi_ayam_hidup_amp_dampak_pendapatan_akan_tampil_di_sini"><![CDATA[Estimasi ayam hidup & dampak pendapatan akan tampil di sini]]></string>
     <string name="rekap_laporan">Rekap Laporan</string>
     <string name="simpan_ringkasan_laporan">Simpan Ringkasan Laporan</string>
@@ -46,7 +46,7 @@
     <string name="rekap_laporan_kambing">Rekap Laporan</string>
     <string name="hasil_perkembangbiakan_amp_pendapatan_tambahan_akan_tampil_di_sini"><![CDATA[Hasil perkembangbiakan & pendapatan tambahan akan tampil di sini]]></string>
     <string name="hitung_populasi_amp_pendapatan"><![CDATA[Hitung Populasi & Pendapatan]]></string>
-    <string name="harga_jual_anak">Harga Jual Anak</string>
+    <string name="harga_jual_anak">Harga Jual Anakan</string>
     <string name="rata_rata_anak_per_tahun">Rata-rata Anak per Tahun</string>
     <string name="jumlah_indukan">Jumlah Indukan</string>
     <string name="perkembangbiakan">Perkembangbiakan</string>
@@ -71,6 +71,7 @@
     <string name="jumlah_kambing_kambing">Jumlah Kambing</string>
     <string name="pakan_harian_amp_biaya_kambing"><![CDATA[Pakan Harian & Biaya]]></string>
     <string name="kalkulator_kambing_teknis_bisnis">Kalkulator Kambing (Teknis &amp; Pendapatan)</string>
+    <string name="sorry_belum_ada_data_nih_silahkan_di_tambah_dulu_datanya_ya">Sorry belum ada data nih :( Silahkan di tambah dulu datanya ya.</string>
     <string-array name="jenis_hewan">
         <item>Ayam</item>
         <item>Kambing</item>

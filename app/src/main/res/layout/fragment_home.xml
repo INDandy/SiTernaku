@@ -30,7 +30,7 @@
         android:id="@+id/tvEmpty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sorry belum ada data nih :( Silahkan di tambah dulu datanya ya."
+        android:text="@string/sorry_belum_ada_data_nih_silahkan_di_tambah_dulu_datanya_ya"
         android:textSize="16sp"
         android:fontFamily="@font/nimbussanlbol"
         android:textColor="@android:color/darker_gray"

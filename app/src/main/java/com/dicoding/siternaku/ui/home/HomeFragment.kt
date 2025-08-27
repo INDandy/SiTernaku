@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -23,7 +24,9 @@ class HomeFragment : Fragment() {
     private val homeViewModel: HomeViewModel by viewModels()
     private lateinit var articleAdapter: ArticleAdapter
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         articleAdapter = ArticleAdapter(
@@ -53,6 +56,14 @@ class HomeFragment : Fragment() {
             }
         }
 
+        lifecycleScope.launch {
+            articleAdapter.loadStateFlow.collect { loadStates ->
+                val isEmpty = loadStates.refresh is androidx.paging.LoadState.NotLoading &&
+                        articleAdapter.itemCount == 0
+                binding.tvEmpty.isVisible = isEmpty
+            }
+        }
+
         binding.fabAdd.setOnClickListener {
             startActivity(Intent(requireContext(), AddArticleActivity::class.java))
         }
@@ -60,4 +71,5 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 }
+
 
