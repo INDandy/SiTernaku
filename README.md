@@ -8,7 +8,7 @@ Dibangun menggunakan **Kotlin**, **Room**, dan **Material Design**.
 ## Fitur Utama
 
 ### 1. Artikel Ternak
-- Tambah artikel dengan thumbnail, judul, heading, subheading, hingga **H6**.
+- Tambah artikel dengan thumbnail.
 - Bisa menambahkan deskripsi dan link terkait.
 - Lihat detail artikel lengkap.
 - Hapus artikel dengan menekan lama item.
@@ -25,14 +25,6 @@ Dibangun menggunakan **Kotlin**, **Room**, dan **Material Design**.
 ### 4. Dark Mode / Light Mode Support
 - Tema otomatis menyesuaikan sistem.
 - Warna tombol, teks, dan background berubah sesuai tema.
-
----
-
-## UI/UX
-- **RecyclerView** dengan placeholder saat data kosong.
-- **ProgressBar** loading saat data dimuat.
-- Tombol **FloatingActionButton** untuk menambah artikel.
-- Thumbnail gambar otomatis menyesuaikan ukuran dengan `centerCrop` dan border putih.
 
 ---
 
