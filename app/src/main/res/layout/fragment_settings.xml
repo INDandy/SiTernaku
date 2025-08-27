@@ -9,7 +9,7 @@
         android:id="@+id/ivLogoApp"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:src="@drawable/logo_app"
+        android:src="@drawable/logo_png"
         android:contentDescription="Logo App"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"

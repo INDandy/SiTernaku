@@ -137,7 +137,7 @@ class CalculatorAyamViewModel : ViewModel() {
         if (data.isEmpty()) return "Belum ada data laporan."
 
         return buildString {
-            append("=== Ringkasan Laporan Ayam ===\n\n")
+            append("=== Rekapan Laporan Ayam ===\n\n")
             data.forEach {
                 append("Tanggal: ${it.tanggal}\n")
                 append("Kategori: ${it.kategori}\n")
@@ -156,7 +156,7 @@ class CalculatorAyamViewModel : ViewModel() {
             return null
         }
 
-        val fileName = "Ringkasan_Ayam_${System.currentTimeMillis()}.txt"
+        val fileName = "Rekapan_Ayam_${System.currentTimeMillis()}.txt"
         val file = File(context.getExternalFilesDir(null), fileName)
 
         val content = getRingkasanText()

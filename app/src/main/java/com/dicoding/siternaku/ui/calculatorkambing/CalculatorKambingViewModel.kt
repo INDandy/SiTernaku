@@ -107,11 +107,11 @@ class CalculatorKambingViewModel : ViewModel() {
             return null
         }
 
-        val fileName = "Ringkasan_Kambing_${System.currentTimeMillis()}.txt"
+        val fileName = "Rekapan_Kambing_${System.currentTimeMillis()}.txt"
         val file = File(context.getExternalFilesDir(null), fileName)
 
         val content = buildString {
-            append("=== Ringkasan Laporan Kambing ===\n\n")
+            append("=== Rekapan Laporan Kambing ===\n\n")
             data.forEach {
                 append("Tanggal: ${it.tanggal}\n")
                 append("Kategori: ${it.kategori}\n")

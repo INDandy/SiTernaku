@@ -140,14 +140,14 @@ class CalculatorKambing : Fragment() {
                                 Toast.makeText(requireContext(), pesan, Toast.LENGTH_SHORT).show()
                             }
                             file?.let {
-                                Toast.makeText(requireContext(), "Ringkasan disimpan: ${it.name}", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(requireContext(), "Rekapan disimpan: ${it.name}", Toast.LENGTH_SHORT).show()
                             }
                         }
                         1 -> {
                             val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
                                 addCategory(Intent.CATEGORY_OPENABLE)
                                 type = "text/plain"
-                                putExtra(Intent.EXTRA_TITLE, "Ringkasan_Kambing.txt")
+                                putExtra(Intent.EXTRA_TITLE, "Rekapan_Kambing.txt")
                             }
                             createDocumentLauncher.launch(intent)
                         }
