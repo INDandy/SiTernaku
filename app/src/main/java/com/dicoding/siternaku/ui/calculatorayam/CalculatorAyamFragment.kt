@@ -42,7 +42,6 @@ class CalculatorAyamFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val view = inflater.inflate(R.layout.fragment_calculator_ayam, container, false)
 
-        // ==================== Bind View ====================
         val etJumlahAyam = view.findViewById<EditText>(R.id.etJumlahAyam)
         val etPakanPerEkor = view.findViewById<EditText>(R.id.etPakanPerEkor)
         val etHargaPakan = view.findViewById<EditText>(R.id.etHargaPakan)
@@ -69,10 +68,8 @@ class CalculatorAyamFragment : Fragment() {
         val adapter = RekapAdapter()
         rvLaporan.adapter = adapter
 
-        // 🔹 Tombol Simpan Ringkasan
         val btnSimpanRingkasan = view.findViewById<Button>(R.id.btnSimpanRingkasan)
 
-        // ==================== Observers ====================
         viewModel.hasilPakan.observe(viewLifecycleOwner, Observer {
             tvHasilPakan.text = it
         })
@@ -93,7 +90,6 @@ class CalculatorAyamFragment : Fragment() {
             adapter.submitList(it.toList())
         })
 
-        // ==================== Click Listeners ====================
         btnHitungPakan.setOnClickListener {
             val jumlahAyam = etJumlahAyam.text.toString().toIntOrNull() ?: 0
             val pakanPerEkor = etPakanPerEkor.text.toString().toDoubleOrNull() ?: 0.0
@@ -124,35 +120,45 @@ class CalculatorAyamFragment : Fragment() {
         }
 
         btnSimpanRingkasan.setOnClickListener {
+            // Cek dulu apakah ada data yang akan disimpan
+            if (viewModel.rekapList.value.isNullOrEmpty()) {
+                AlertDialog.Builder(requireContext())
+                    .setTitle("Perhatian")
+                    .setMessage("Tidak ada data yang dapat disimpan")
+                    .setPositiveButton("OK", null)
+                    .show()
+                return@setOnClickListener
+            }
+
             val options = arrayOf("Simpan Otomatis", "Simpan ke Lokasi Lain")
             AlertDialog.Builder(requireContext())
                 .setTitle("Pilih opsi simpan")
                 .setItems(options) { _, which ->
                     when (which) {
-                        0 -> { // Simpan Otomatis
-                            val file = viewModel.simpanRingkasanKeTXT(requireContext())
-                            if (file != null) {
-                                Toast.makeText(requireContext(), "Ringkasan disimpan: ${file.name}", Toast.LENGTH_SHORT).show()
+                        0 -> {
+                            val file = viewModel.simpanRingkasanKeTXT(requireContext()) { pesan ->
+                                Toast.makeText(requireContext(), pesan, Toast.LENGTH_SHORT).show()
+                            }
+                            file?.let {
+                                Toast.makeText(requireContext(), "Ringkasan disimpan: ${it.name}", Toast.LENGTH_SHORT).show()
 
                                 val uri = FileProvider.getUriForFile(
                                     requireContext(),
                                     "${requireContext().packageName}.provider",
-                                    file
+                                    it
                                 )
                                 val intent = Intent(Intent.ACTION_VIEW).apply {
                                     setDataAndType(uri, "text/plain")
                                     addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
                                 }
                                 startActivity(Intent.createChooser(intent, "Buka ringkasan dengan:"))
-                            } else {
-                                Toast.makeText(requireContext(), "Tidak ada data untuk disimpan", Toast.LENGTH_SHORT).show()
                             }
                         }
-                        1 -> { // Simpan ke lokasi lain
+                        1 -> {
                             val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
                                 addCategory(Intent.CATEGORY_OPENABLE)
                                 type = "text/plain"
-                                putExtra(Intent.EXTRA_TITLE, "Ringkasan_Ayam.txt")
+                                putExtra(Intent.EXTRA_TITLE, "Ringkasan_Kambing.txt")
                             }
                             createDocumentLauncher.launch(intent)
                         }

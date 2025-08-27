@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- AppBar utama -->
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBar"
         android:layout_width="match_parent"
@@ -15,7 +14,6 @@
         android:background="?attr/colorSurface"
         app:elevation="4dp">
 
-        <!-- Top bar level 2 (pilihan 2 tab) -->
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"
@@ -26,7 +24,6 @@
             app:tabIndicatorAnimationMode="elastic" />
     </com.google.android.material.appbar.AppBarLayout>
 
-    <!-- Konten: ViewPager2 untuk switch antar fragment -->
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
         android:layout_width="match_parent"

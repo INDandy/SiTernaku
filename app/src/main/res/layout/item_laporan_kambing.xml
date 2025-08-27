@@ -9,44 +9,37 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="8dp">
-
-        <TextView
-            android:id="@+id/tvKategori"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Kategori"
-            android:textStyle="bold"
-            android:textSize="16sp" />
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/tvTanggal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tanggal"
-            android:textSize="14sp" />
+            android:textStyle="bold"/>
 
         <TextView
-            android:id="@+id/tvPendapatan"
+            android:id="@+id/tvKategori"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pendapatan"
-            android:textSize="14sp" />
+            android:text="Kategori"/>
 
         <TextView
             android:id="@+id/tvBiaya"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Biaya"
-            android:textSize="14sp" />
+            android:text="Biaya"/>
+
+        <TextView
+            android:id="@+id/tvPendapatan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pendapatan"/>
 
         <TextView
             android:id="@+id/tvKeuntungan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Keuntungan"
-            android:textStyle="bold"
-            android:textSize="15sp" />
+            android:text="Keuntungan"/>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

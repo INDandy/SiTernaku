@@ -19,7 +19,7 @@
             android:layout_width="248dp"
             android:layout_height="291dp"
             android:layout_gravity="center"
-            android:contentDescription="Thumbnail"
+            android:contentDescription="@string/thumbnail"
             android:scaleType="fitCenter"
             android:src="@drawable/photos" />
 
@@ -32,52 +32,53 @@
             android:layout_gravity="center"
             android:textStyle="bold"
             style="@style/TextColor"
-            android:text="Pilih Gambar" />
+            android:text="@string/pilih_gambar" />
 
         <!-- Title -->
         <EditText
             android:id="@+id/etTitle"
             android:layout_width="match_parent"
             android:layout_height="90dp"
+            android:autofillHints=""
             android:background="@drawable/border2"
             android:fontFamily="@font/nimbussanlreg"
             android:gravity="top"
-            android:hint="Title"
+            android:hint="@string/title"
             android:inputType="textCapSentences"
             android:padding="12dp" />
 
 
         <EditText
             android:id="@+id/etHeading"
+            android:autofillHints=""
             android:fontFamily="@font/nimbussanlreg"
             android:gravity="top"
             android:layout_width="match_parent"
             android:layout_height="90dp"
             android:background="@drawable/border2"
-            android:hint="Heading" />
+            android:hint="@string/heading" />
 
         <EditText
             android:id="@+id/etH3"
+            android:autofillHints=""
             android:fontFamily="@font/nimbussanlreg"
             android:gravity="top"
             android:layout_width="match_parent"
             android:layout_height="90dp"
             android:background="@drawable/border2"
-            android:hint="Description" />
+            android:hint="@string/description" />
 
-        <!-- Link -->
         <EditText
             android:id="@+id/etLink"
             android:layout_width="match_parent"
+            android:autofillHints=""
             android:fontFamily="@font/nimbussanlreg"
-
             android:layout_height="90dp"
             android:background="@drawable/border2"
             android:gravity="top"
-            android:hint="Link Artikel (opsional)"
+            android:hint="@string/link_artikel_opsional"
             android:inputType="textUri" />
 
-        <!-- Save Button -->
         <Button
             android:id="@+id/btnSaveArticle"
             android:layout_width="match_parent"
@@ -85,8 +86,7 @@
             android:fontFamily="@font/nimbussanlreg"
             android:backgroundTint="@color/hijau_button"
             style="@style/TextColor"
-            android:text="Simpan Artikel"
+            android:text="@string/simpan_artikel"
             android:layout_marginTop="16dp" />
-
     </LinearLayout>
 </ScrollView>

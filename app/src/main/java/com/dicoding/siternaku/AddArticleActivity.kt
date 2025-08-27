@@ -72,7 +72,7 @@ class AddArticleActivity : AppCompatActivity() {
             heading = binding.etHeading.text.toString(),
             h3 = binding.etH3.text.toString(),
             link = binding.etLink.text.toString(),
-            date = currentDate // otomatis isi tanggal
+            date = currentDate
         )
 
         viewModel.insert(article)

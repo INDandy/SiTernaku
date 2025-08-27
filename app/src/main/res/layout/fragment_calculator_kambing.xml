@@ -1,13 +1,267 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.calculatorkambing.CalculatorKambing">
+    android:padding="16dp">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:divider="?android:attr/dividerHorizontal"
+        android:showDividers="middle"
+        android:dividerPadding="12dp">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/kalkulator_kambing_teknis_bisnis"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingBottom="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pakan_harian_amp_biaya_kambing"
+            android:textStyle="bold"
+            android:paddingTop="12dp"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/etJumlahKambingPakan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/jumlah_kambing_kambing"
+            android:inputType="number"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/etHijauanPerEkor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/kebutuhan_hijauan_per_ekor_kg"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/etKonsentratPerEkor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/konsentrat_per_ekor_opsional"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/etHargaPakan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/harga_pakan_per_kg_kambing"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="8dp"/>
+
+        <Button
+            android:id="@+id/btnHitungPakan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextColorBT"
+            android:text="@string/hitung_pakan_amp_biaya_kambing"
+            android:layout_marginTop="12dp"/>
+
+        <TextView
+            android:id="@+id/tvHasilPakan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/kebutuhan_pakan_kambing"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bobot_panen"
+            android:textStyle="bold"
+            android:paddingTop="16dp"
+            android:textSize="16sp"/>
+
+        <EditText
+            android:id="@+id/etJumlahKambingPanen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/jumlah_kambing"
+            android:inputType="number"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/etBobotAwalPanen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/bobot_awal_kg"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/etRataPertambahan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/rata_rata_pertambahan_bobot_kg"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/etHargaJualKg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/harga_jual_per_kg_kambing"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="8dp"/>
+
+        <Button
+            android:id="@+id/btnHitungPanen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextColorBT"
+            android:text="@string/hitung_bobot_amp_pendapatan"
+            android:layout_marginTop="12dp"/>
+
+        <TextView
+            android:id="@+id/tvHasilPanen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bobot_pendapatan_kambing"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/produksi_susu_jika_kambing_perah"
+            android:textStyle="bold"
+            android:paddingTop="16dp"
+            android:textSize="16sp"/>
+
+        <EditText
+            android:id="@+id/etJumlahKambingPerah"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/jumlah_kambing_perah"
+            android:inputType="number"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/etLiterPerEkor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/liter_susu_per_ekor_per_hari"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/etHargaSusu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/harga_susu_per_liter"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="8dp"/>
+
+        <Button
+            android:id="@+id/btnHitungSusu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextColorBT"
+            android:text="@string/hitung_produksi_amp_pendapatan"
+            android:layout_marginTop="12dp"/>
+
+        <TextView
+            android:id="@+id/tvHasilSusu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hasil_produksi_susu_amp_pendapatan_akan_tampil_di_sini"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/perkembangbiakan"
+            android:textStyle="bold"
+            android:paddingTop="16dp"
+            android:textSize="16sp"/>
+
+        <EditText
+            android:id="@+id/etJumlahIndukan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/jumlah_indukan"
+            android:inputType="number"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/etRataAnakPerTahun"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/rata_rata_anak_per_tahun"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/etHargaJualAnak"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/harga_jual_anak"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="8dp"/>
+
+        <Button
+            android:id="@+id/btnHitungPerkembangbiakan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextColorBT"
+            android:text="@string/hitung_populasi_amp_pendapatan"
+            android:layout_marginTop="12dp"/>
+
+        <TextView
+            android:id="@+id/tvHasilPerkembangbiakan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hasil_perkembangbiakan_amp_pendapatan_tambahan_akan_tampil_di_sini"
+            android:layout_marginTop="8dp"/>
+
+        <!-- ==================== Hasil Rekap ==================== -->
+        <TextView
+            android:id="@+id/tvRekap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/rekap_laporan_kambing"
+            android:textStyle="bold"
+            android:paddingTop="16dp"
+            android:textSize="16sp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvLaporanKambing"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:overScrollMode="never"
+            android:layout_marginTop="8dp"/>
+
+        <Button
+            android:id="@+id/btnSimpanRingkasanKambing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/simpan_ringkasan_laporan_kambing"
+            style="@style/TextColorBT"
+            android:layout_marginTop="12dp"/>
+    </LinearLayout>
+</ScrollView>

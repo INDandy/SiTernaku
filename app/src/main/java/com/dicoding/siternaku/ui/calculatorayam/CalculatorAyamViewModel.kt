@@ -38,7 +38,6 @@ class CalculatorAyamViewModel : ViewModel() {
     private val _grafikTelur = MutableLiveData<MutableList<GrafikData>>(mutableListOf())
     val grafikTelur: LiveData<MutableList<GrafikData>> get() = _grafikTelur
 
-    // 🔹 Hitung pakan
     fun hitungPakan(jumlahAyam: Int, pakanPerEkor: Double, hargaPakan: Double) {
         val totalPakan = jumlahAyam * pakanPerEkor
         val biayaHarian = totalPakan * hargaPakan
@@ -53,7 +52,6 @@ class CalculatorAyamViewModel : ViewModel() {
         tambahRekap("Pakan", biayaHarian, biayaBulanan)
     }
 
-    // 🔹 Hitung telur
     fun hitungTelur(jumlahBetina: Int, persenProduksi: Double, hargaTelur: Double) {
         val produksiHarian = jumlahBetina * (persenProduksi / 100)
         val pendapatanHarian = produksiHarian * hargaTelur
@@ -71,7 +69,6 @@ class CalculatorAyamViewModel : ViewModel() {
         tambahRekap("Telur", 0.0, pendapatanBulanan)
     }
 
-    // 🔹 Hitung panen
     fun hitungPanen(jumlahAyam: Int, bobot: Double, hargaPerKg: Double) {
         val totalBobot = jumlahAyam * bobot
         val pendapatan = totalBobot * hargaPerKg
@@ -85,7 +82,6 @@ class CalculatorAyamViewModel : ViewModel() {
         tambahRekap("Panen", 0.0, pendapatan)
     }
 
-    // 🔹 Hitung mortalitas
     fun hitungMortalitas(jumlahAyam: Int, mortalitas: Double, hargaKg: Double, bobot: Double) {
         val mati = jumlahAyam * (mortalitas / 100)
         val hidup = jumlahAyam - mati
@@ -152,9 +148,13 @@ class CalculatorAyamViewModel : ViewModel() {
             }
         }
     }
-    fun simpanRingkasanKeTXT(context: Context): File? {
+
+    fun simpanRingkasanKeTXT(context: Context, onError: (String) -> Unit): File? {
         val data = _rekapList.value ?: emptyList()
-        if (data.isEmpty()) return null
+        if (data.isEmpty()) {
+            onError("Tidak ada data yang akan disimpan")
+            return null
+        }
 
         val fileName = "Ringkasan_Ayam_${System.currentTimeMillis()}.txt"
         val file = File(context.getExternalFilesDir(null), fileName)
@@ -164,5 +164,4 @@ class CalculatorAyamViewModel : ViewModel() {
 
         return file
     }
-
 }
